@@ -26,16 +26,17 @@
 /**
  * Choose your version:
  */
-// normal size or plus?
+
+// Normal or Plus size?
 #define ANYCUBIC_KOSSEL_PLUS
 
 // Anycubic Probe version 1 or 2 see README.md; 0 for no probe
 #define ANYCUBIC_PROBE_VERSION 2
 
 // Heated Bed:
-// 0 ... no heated bed
-// 1 ... aluminium heated bed with "BuildTak-like" sticker
-// 2 ... ultrabase heated bed
+// 0 ... No heated bed
+// 1 ... Aluminium heated bed with "BuildTak-like" sticker
+// 2 ... Ultrabase heated bed
 #define ANYCUBIC_KOSSEL_ENABLE_BED 2
 
 /**
@@ -140,6 +141,9 @@
   //#define M485_PROTOCOL 1   // Check your host for protocol compatibility
   //#define RS485_BUS_BUFFER_SIZE 128
 #endif
+
+// Enable CAN bus support and protocol
+//#define CAN_MASTER
 
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
@@ -1838,17 +1842,17 @@
 // @section stepper drivers
 
 // For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
-// :{ 0:'Low', 1:'High' }
-#define X_ENABLE_ON 0
-#define Y_ENABLE_ON 0
-#define Z_ENABLE_ON 0
-#define E_ENABLE_ON 0 // For all extruders
-//#define I_ENABLE_ON 0
-//#define J_ENABLE_ON 0
-//#define K_ENABLE_ON 0
-//#define U_ENABLE_ON 0
-//#define V_ENABLE_ON 0
-//#define W_ENABLE_ON 0
+// :['LOW', 'HIGH']
+#define X_ENABLE_ON LOW
+#define Y_ENABLE_ON LOW
+#define Z_ENABLE_ON LOW
+#define E_ENABLE_ON LOW // For all extruders
+//#define I_ENABLE_ON LOW
+//#define J_ENABLE_ON LOW
+//#define K_ENABLE_ON LOW
+//#define U_ENABLE_ON LOW
+//#define V_ENABLE_ON LOW
+//#define W_ENABLE_ON LOW
 
 // Disable axis steppers immediately when they're not being stepped.
 // WARNING: When motors turn off there is a chance of losing position accuracy!
