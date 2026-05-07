@@ -7,7 +7,7 @@ guide you through the configuration and compilation.
 2. Launch the IDE to add the ST boards manager:
    - Open the **Preferences** dialog.
    - Add this link in the "*Additional Boards Managers URLs*" field:
-      https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json
+      https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json
    - Select "**Show verbose ouptut during: compilation**."
 3. Select **Tools** > **Board** > **Boards Manager**.
 4. Type "Malyan" into the Search field.
@@ -15,7 +15,7 @@ guide you through the configuration and compilation.
 6. Open the **Tools** > **Board** submenu, scroll all the way down, and select **3D Printer Boards**.
 7. From the **Tools** menu, select a board part number **Malyan M300**:
 8. From the **Tools** menu, choose **USB Support** > **CDC No Generic Serial**.
-9. Download the [latest Marlin source](https://marlinfw.org/meta/download/) and unzip it.
+9. Download the [latest Marlin source](//marlinfw.org/meta/download/) and unzip it.
 10. Look in the `Marlin` subdirectory for the `Configuration.h` and `Configuration_adv.h` files. Replace these files with the configurations in the `config\examples\Malyan\M300` folder.
 11. Open the `Marlin/Marlin.ino` file in Arduino IDE.
 12. From the **Sketch** menu, select **File** > **Export Compiled Binary**.

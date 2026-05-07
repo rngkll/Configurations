@@ -15,17 +15,18 @@
 
 You can (OR MUST) dump the current settings of your printer. It may help you to figure out some configs, like steps/mm of your extruder.
 
-1. Create a file named `savesettings.gcode` with the following content:
+1. Send `M503` to see a report of the current settings in your host.
+2. Create a file named `savesettings.gcode` with the following contents:
 ```gcode
 M6046 ; sdcard access
 M8512 "currentconfig.gcode" ; save settings to file
 ```
-2. Save it on the printer's SD card
-3. Put the card in the printer and "print" this file
-4. The printer won't do anything. Just wait a few seconds and stop the print.
-5. Your current printer settings are stored in the file: `currentconfig.gcode`
+3. Save it on the printer's SD card
+4. Put the card in the printer and "print" this file
+5. The printer won't do anything. Just wait a few seconds and stop the print.
+6. Your current printer settings are stored in the file: `currentconfig.gcode`
 
-You can read more about it in [this guide](https://www.facebook.com/notes/tronxy-turnigy-x5s-x5sa-x3s-3d-printer-drucker-users/tronxy-firmware-configuration-guide-by-keith-varin-addermk264bit-tuning/649799805579765/).
+You can read more about it in [this guide](//www.facebook.com/notes/tronxy-turnigy-x5s-x5sa-x3s-3d-printer-drucker-users/tronxy-firmware-configuration-guide-by-keith-varin-addermk264bit-tuning/649799805579765/).
 
 Thanks to KEITH VARIN.
 
@@ -151,35 +152,21 @@ Check your values!
 Normal non-TMC:
 ```cpp
 /**
- * Default Axis Steps Per Unit (steps/mm)
+ * Default Axis Steps Per Unit (linear=steps/mm, rotational=steps/°)
  * Override with M92 (when enabled below)
- *                                      X, Y, Z, E0 [, E1[, E2...]]
+ *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 92.6 }
 ```
 Titan Non-PRO:
 ```cpp
-/**
- * Default Axis Steps Per Unit (steps/mm)
- * Override with M92 (when enabled below)
- *                                      X, Y, Z, E0 [, E1[, E2...]]
- */
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 420 }
-
-// Extruder seems inverted on titan!
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR true // Extruder seems inverted on Titan!
 ```
 Titan PRO (tmc):
 ```cpp
-/**
- * Default Axis Steps Per Unit (steps/mm)
- * Override with M92 (when enabled below)
- *                                      X, Y, Z, E0 [, E1[, E2...]]
- */
 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 800, 764 }
-
-// Extruder seems inverted on titan!
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR true // Extruder seems inverted on Titan!
 ```
 
 ## 5. Other Marlin Config
@@ -192,7 +179,7 @@ You can customize for your own setup. TFT, Baby Steps and a lot of cool stuff ar
 2. Open your board case
 3. Remove the "boot" jumper (1) as the image.
 4. Change the "v source" jumper (2) from 5V to USB.
-5. Open [STM Cube Programmer](https://www.st.com/en/development-tools/stm32cubeprog.html) (linux, mac, windows) or [FLASHER-STM32](https://www.st.com/en/development-tools/flasher-stm32.html) (only windows)
+5. Open [STM Cube Programmer](//www.st.com/en/development-tools/stm32cubeprog.html) (linux, mac, windows) or [FLASHER-STM32](//www.st.com/en/development-tools/flasher-stm32.html) (only windows)
 6. The size must be **512kb -> 0x80000**
 7. Save the file. It must have exactly 524288 bytes (512kb)
 8. Disconnect
@@ -226,7 +213,7 @@ OBSOLETE! JUST USE THE FIRST METHOD.
 2. Open the board case
 3. Remove the "boot" jumper (1) as the image.
 4. Change the V source jumper (2) from 5V to USB.
-5. Open [STM Cube Programmer](https://www.st.com/en/development-tools/stm32cubeprog.html) (linux, mac, windows) or [FLASHER-STM32](https://www.st.com/en/development-tools/flasher-stm32.html) (only windows)
+5. Open [STM Cube Programmer](//www.st.com/en/development-tools/stm32cubeprog.html) (linux, mac, windows) or [FLASHER-STM32](//www.st.com/en/development-tools/flasher-stm32.html) (only windows)
 6. Flash the YOUR-MARLIN-DIR/.pio/build/chitu_f103/firmware.bin at 0x08000000
 7. After the Flash is done, put the back the boot jumper (1) and the V source jumper to 5V.
 8. Turn on the printer

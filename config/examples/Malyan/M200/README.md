@@ -7,7 +7,7 @@ guide you through the configuration and compilation.
 2. Launch the IDE to add the ST boards manager:
    - Open the **Preferences** dialog.
    - Add this link in the "*Additional Boards Managers URLs*" field:
-      https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json
+      https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json
    - Select "**Show verbose ouptut during: compilation**."
 3. Select **Tools** > **Board** > **Boards Manager**.
 4. Type "Malyan" into the Search field.
@@ -17,9 +17,9 @@ guide you through the configuration and compilation.
    - If you own a M200 V1 or early run (black V2), choose **Malyan M200 V1**.
    - If you own a M200 V2 later run (white/black) or V3 (Pro), choose **Malyan M200 V2** (The V2 and V3 both share an STM32F070 MCU). Note that the V3 pinout is not complete (autolevel doesn't work as of this writing).
 8. From the **Tools** menu, choose **USB Support** > **CDC No Generic Serial**.
-9. Download the [latest Marlin source](https://marlinfw.org/meta/download/) and unzip it.
+9. Download the [latest Marlin source](//marlinfw.org/meta/download/) and unzip it.
 10. Look in the `Marlin` subdirectory for the `Configuration.h` and `Configuration_adv.h` files. Replace these files with the configurations in the `config\examples\Malyan\M200` folder.
-11. If you have an early-run V2, the steps-per-mm are roughly half. Consult the [mpminipro.com wiki](https://mpminipro.com/) for the steps that apply to your unit. Modify `Configuration.h`.
+11. If you have an early-run V2, the steps-per-mm are roughly half. Consult the [mpminipro.com wiki](//mpminipro.com/) for the steps that apply to your unit. Modify `Configuration.h`.
 12. Inverting Axis. There's no pattern to axes will need to be inverted. The only way to know is to test your particular printer. If you *do* know, go ahead and invert the correct axes.
 13. Open the `Marlin/Marlin.ino` file in Arduino IDE.
 14. From the **Sketch** menu, select **File** > **Export Compiled Binary**.
